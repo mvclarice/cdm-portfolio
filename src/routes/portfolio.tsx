@@ -39,11 +39,15 @@ export function Portfolio() {
           >
             <img
               src={album.cover}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 size-full object-cover object- transition-opacity duration-300 group-hover:opacity-0"
             />
 
             <img
               src={album.photos[0]}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-60"
             />
 
@@ -69,6 +73,8 @@ export function Portfolio() {
               <img
                 key={i}
                 src={photo}
+                loading="lazy"
+                decoding="async"
                 onClick={() => setActivePhoto(photo)}
                 className="aspect-square w-full object-cover rounded-xl cursor-zoom-in transition-transform hover:scale-105"
               />
