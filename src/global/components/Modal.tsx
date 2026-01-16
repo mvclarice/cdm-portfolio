@@ -37,7 +37,9 @@ export function Modal({
         {/* Title */}
         {title && (
           <div className="w-full flex flex-col items-center gap-8">
-            <span className="text-3xl text-white font-bold">{title}</span>
+            <span className="text-3xl max-sm:max-w-[13rem] text-white font-bold">
+              {title}
+            </span>
 
             <div className="w-full h-0.5 mb-8 bg-green-900/40" />
           </div>

@@ -30,16 +30,16 @@ export function Portfolio() {
         </div>
       </header>
 
-      <div className="w-full grid max-md:grid-cols-1 max-xl:grid-cols-2 grid-cols-3 gap-4">
+      <div className="w-full grid max-md:grid-cols-1 max-xl:grid-cols-2 grid-cols-3 max-sm:gap-6 gap-4">
         {albums.map((album) => (
           <Card
             key={album.id}
             onClick={() => setActiveAlbum(album)}
-            className="group relative aspect-video p-0 border-0 rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.03]"
+            className="group relative aspect-video p-0 border-2 sm:border-0 border-[#07b850] rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.03]"
           >
             <img
               src={album.cover}
-              className="absolute inset-0 size-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+              className="absolute inset-0 size-full object-cover object- transition-opacity duration-300 group-hover:opacity-0"
             />
 
             <img
