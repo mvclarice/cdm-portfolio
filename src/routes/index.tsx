@@ -9,15 +9,15 @@ export const Route = createFileRoute('/')({
 
 const MAIN_PHOTOS = [
   {
-    src: '/covers/home/COVER-MED-VET.jpg',
+    src: '/una/18.webp',
     class: 'sm:col-span-2 ',
   },
   {
-    src: '/covers/home/CLINICA-CASA-DO-GATO.jpg',
+    src: '/casa-do-gato.webp',
     class: 'aspect-video h-85 object-cover',
   },
   {
-    src: '/covers/home/BRASÃO-UNA-VET.jpg',
+    src: '/una/26.webp',
     class: 'aspect-video object-cover h-85',
   },
 ]
