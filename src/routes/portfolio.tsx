@@ -35,7 +35,7 @@ export function Portfolio() {
           <Card
             key={album.id}
             onClick={() => setActiveAlbum(album)}
-            className="group relative aspect-video p-0 border-2 sm:border-0 border-[#07b850] rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.03]"
+            className="group relative aspect-video p-0 border-2 sm:border-1 border-[#05a548] rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.03]"
           >
             <img
               src={album.cover}
