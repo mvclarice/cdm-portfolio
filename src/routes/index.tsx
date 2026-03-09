@@ -10,15 +10,15 @@ export const Route = createFileRoute('/')({
 const MAIN_PHOTOS = [
   {
     src: '/una/18.webp',
-    class: 'sm:col-span-2 ',
+    class: 'sm:col-span-2 max-[450px]:aspect-square object-cover',
   },
   {
     src: '/casa-do-gato.webp',
-    class: 'aspect-video h-85 object-cover',
+    class: 'max-[450px]:aspect-square aspect-video sm:h-85 w-full object-cover',
   },
   {
     src: '/una/26.webp',
-    class: 'aspect-video object-cover h-85',
+    class: 'max-[450px]:aspect-square aspect-video sm:h-85 w-full object-cover',
   },
 ]
 
@@ -67,7 +67,6 @@ function HomePage() {
         <Card className="max-w-4xl w-full p-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Main Photos */}
-
             {MAIN_PHOTOS.map((photo) => (
               <img
                 key={photo.src}

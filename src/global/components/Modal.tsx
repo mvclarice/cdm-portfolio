@@ -34,23 +34,30 @@ export function Modal({
           className,
         )}
       >
-        {/* Title */}
-        {title && (
-          <div className="w-full flex flex-col items-center gap-8">
-            <span className="text-3xl max-sm:max-w-[13rem] text-white font-bold">
-              {title}
-            </span>
-
-            <div className="w-full h-0.5 mb-8 bg-green-900/40" />
-          </div>
-        )}
-
-        <button
-          className="absolute z-40 right-4 top-4 cursor-pointer p-2 rounded-2xl hover:bg-green-700"
-          onClick={onClose}
+        <div
+          className={twMerge(
+            'flex items-center gap-2',
+            title ? 'justify-between' : 'justify-end m-4',
+          )}
         >
-          <X className="cursor-pointer" size={28} color="white" />
-        </button>
+          {/* Title */}
+          {title && (
+            <div className="w-full flex flex-col items-center gap-8">
+              <span className="text-2xl max-sm:text-center sm:text-3xl text-white font-bold">
+                {title}
+              </span>
+            </div>
+          )}
+
+          <button
+            className="z-50 cursor-pointer border border-green-700/40 p-2 rounded-2xl hover:bg-green-400/40"
+            onClick={onClose}
+          >
+            <X className="cursor-pointer" size={28} color="white" />
+          </button>
+        </div>
+
+        <div className="w-full h-0.5 mb-8 bg-green-900/40" />
 
         {children}
       </Card>
