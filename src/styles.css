@@ -1,17 +1,79 @@
 @import 'tailwindcss';
 
-body {
-  @apply m-0 bg-gradient-to-br from-green-800 via-[#0b1f14] to-green-800;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Project colors, animations and fonts */
+@theme {
+  --animate-spin-slow: spin 3s linear infinite;
+
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --color-teal: #3c6335;
+  --color-teal-dark: #2d4a28;
+  --color-teal-light: #4e7d45;
+
+  --color-black: #0a0a0a;
+  --color-dark: #141414;
+  --color-dark-card: #1a1a1a;
+
+  --color-gray-900: #1e1e1e;
+  --color-gray-800: #2a2a2a;
+  --color-gray-600: #6b6b6b;
+  --color-gray-400: #999;
+  --color-gray-200: #d4d4d4;
+
+  --color-white: #f5f5f5;
+  --color-pure-white: #ffffff;
+
+  --color-black-transparent: rgba(10, 10, 10, 0.6);
 }
 
-html,
 body {
-  @apply bg-gradient-to-br from-green-800 via-[#0b1f14] to-green-800;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--color-black);
+  color: var(--color-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── GRAIN OVERLAY ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px;
+}
+
+/* ─── GRADIENT BG ─── */
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 20% 10%,
+      rgba(60, 99, 53, 0.1) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 80% 90%,
+      rgba(60, 99, 53, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 100% 80% at 50% 50%,
+      rgba(20, 20, 20, 1) 0%,
+      var(--color-black) 100%
+    );
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-teal) var(--color-dark);
 }
 
 code {
@@ -23,4 +85,49 @@ code {
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 251, 59, 0.2) rgb(27, 87, 27);
+}
+
+/* Navbar style */
+.nav-links-style a {
+  color: var(--color-gray-400);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links-style a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-teal);
+  transition: width 0.3s ease;
+}
+
+.nav-links-style a:hover {
+  color: var(--white);
+}
+.nav-links-style a:hover::after {
+  width: 100%;
+}
+
+/*Hero animation*/
+.float {
+  display: flex;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
