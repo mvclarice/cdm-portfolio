@@ -1,5 +1,6 @@
 import { Button } from '@/ui/components'
 import { LayoutGrid, MessageSquare } from 'lucide-react'
+import { SectionLabel } from '../SectionLabel'
 
 export function HeroSection() {
   return (
@@ -7,13 +8,7 @@ export function HeroSection() {
       <div className="flex max-md:flex-col-reverse max-md:gap-20 gap-8 justify-between w-full max-w-6xl">
         {/* TEXT */}
         <div className="flex flex-col max-md:items-center max-md:text-center">
-          <div
-            className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase 
-               text-teal mb-4"
-          >
-            <span className="w-7 h-px bg-teal" />
-            Criatividade & Propósito
-          </div>
+          <SectionLabel>Criatividade & Propósito</SectionLabel>
 
           <h1 className="font-serif text-5xl lg:text-7xl tracking-tighter font-semibold leading-tight text-white mb-2">
             Clarice DM<span className="text-teal">.</span>

@@ -1,4 +1,4 @@
-import { HeroSection } from '@/components'
+import { HeroSection, PortfolioSection } from '@/components'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -34,7 +34,7 @@ export default function HomePage() {
 
         {/* Portfolio Section */}
         <section id="portfolio" className="min-h-full w-full">
-          ddfffffdddddd
+          <PortfolioSection />
         </section>
 
         {/* Contact Section */}
