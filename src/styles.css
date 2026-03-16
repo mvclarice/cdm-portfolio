@@ -74,6 +74,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--color-teal) var(--color-dark);
+  scroll-padding-top: 30px;
 }
 
 code {

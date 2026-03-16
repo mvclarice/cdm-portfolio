@@ -37,7 +37,7 @@ export function HeroSection() {
               </Button>
             </a>
 
-            <a href="#portfolio">
+            <a href="#contato">
               <Button
                 className="group "
                 variant={'ghost'}
@@ -53,17 +53,17 @@ export function HeroSection() {
         </div>
 
         {/* IMAGE */}
-        <div className="flex justify-center items-center relative">
+        <div className="flex  justify-center items-center relative">
           <div className="relative w-[18rem] h-[18rem] md:w-[22rem] md:h-[22rem]">
             <div className="absolute inset-[-4px] animate-spin-slow rounded-full bg-gradient-to-br from-transparent via-transparent to-teal"></div>
 
             <img
-              src="/global/profile.jpg"
+              src="/global/profile.webp"
               alt="Clarice"
               className="relative z-10 w-full h-full rounded-full object-cover border-4 border-neutral-900"
             />
 
-            {/* badge */}
+            {/* Badge */}
             <div className="float absolute bottom-5 z-10 -right-3 flex items-center gap-2 bg-neutral-900/80 backdrop-blur border border-gray-800 px-4 py-2.5 rounded-xl">
               <div className="w-2 h-2 bg-teal rounded-full animate-pulse" />
 

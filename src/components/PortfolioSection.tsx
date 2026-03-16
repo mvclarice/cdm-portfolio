@@ -63,12 +63,14 @@ const MY_PORTOFOLIO = [
 
 export function PortfolioSection() {
   return (
-    <div className="h-full flex flex-col items-center justify-center w-full">
-      <SectionLabel rightDivider={true}>Trabalhos Selecionados</SectionLabel>
+    <div className=" h-full flex flex-col items-center justify-center w-full">
+      <div className="flex flex-col items-center my-20">
+        <SectionLabel rightDivider={true}>Trabalhos Selecionados</SectionLabel>
 
-      <h2 className="text-5xl font-serif font-semibold tracking-tight">
-        Portfólio
-      </h2>
+        <h2 className="text-[52px] font-serif font-semibold tracking-tight">
+          Portfólio
+        </h2>
+      </div>
 
       {MY_PORTOFOLIO.map((item, index) => (
         <PortfolioItem
@@ -77,7 +79,8 @@ export function PortfolioSection() {
           tag={item.tag}
           title={item.title}
           description={item.description}
-          images={[1, 2, 3, 4]}
+          images={['1', '2', '3', '4']}
+          index={index}
         />
       ))}
     </div>

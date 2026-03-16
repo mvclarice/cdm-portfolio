@@ -11,8 +11,15 @@ export const buttonStyle = cva(
         basic: `text-black font-semibold bg-teal border border-teal hover:-translate-y-[2px]
           duration-300 hover:shadow-[0_0_30px_rgba(60,99,53,0.35)] 
           `,
-        ghost: `text-white border border-gray-700 hover:text-teal hover:border-teal hover:-translate-y-[2px] 
+
+        ghost: ` text-white border border-gray-700 hover:text-teal hover:border-teal hover:-translate-y-[2px] 
           hover:border-2`,
+
+        insta: `bg-gray-900/50 text-white border-2 border-gray-700/40 hover:border-red-700 hover:-translate-y-[2px] 
+          hover:border-2 font-semibold duration-300 hover:shadow-[0_0_30px_rgba(185,28,28,0.35)]`,
+
+        whats: `bg-gray-900/50 text-white border-2 border-gray-700/40 hover:border-green-700 hover:-translate-y-[2px] 
+         font-semibold duration-300 hover:shadow-[0_0_30px_rgba(21,128,61,0.35)]`,
       },
       size: {
         default: 'px-8 py-3 rounded-full text-sm',

@@ -1,45 +1,31 @@
-import { HeroSection, PortfolioSection } from '@/components'
+import { ContactSection, PortfolioSection } from '@/components'
+import { HeroSection } from '@/components/subcomponents/HeroSection'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   component: HomePage,
 })
 
-const MAIN_PHOTOS = [
-  {
-    src: '/una/18.webp',
-    class: 'sm:col-span-2 max-[450px]:aspect-square object-cover',
-  },
-  {
-    src: '/casa-do-gato.webp',
-    class: 'max-[450px]:aspect-square aspect-video sm:h-85 w-full object-cover',
-  },
-  {
-    src: '/una/26.webp',
-    class: 'max-[450px]:aspect-square aspect-video sm:h-85 w-full object-cover',
-  },
-]
-
 export default function HomePage() {
   return (
     <>
-      {/* BACKGROUND */}
+      {/* Background */}
       <div className="fixed inset-0 z-[-1] bg-gradient" />
 
-      <main className="flex flex-col gap-20 px-6 lg:px-24 py-20 overflow-x-hidden">
+      <main className="flex flex-col px-6 py-20 overflow-x-hidden">
         {/* Hero Section */}
         <section id="inicio">
           <HeroSection />
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="min-h-full w-full">
+        <section id="portfolio">
           <PortfolioSection />
         </section>
 
         {/* Contact Section */}
-        <section id="contato" className="min-h-full w-full">
-          Contact
+        <section id="contato">
+          <ContactSection />
         </section>
       </main>
     </>
