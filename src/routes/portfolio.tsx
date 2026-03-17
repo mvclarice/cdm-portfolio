@@ -1,8 +1,9 @@
 import { ProjectLogo } from '@/components'
 import { Card, Modal } from '@/global/components'
 import { LightBox } from '@/global/components/LightBox'
-import type { Album } from '@/portfolio/utils'
-import { albums } from '@/portfolio/utils'
+import type { Album } from '@/global/utils'
+import { albums } from '@/global/utils'
+
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 

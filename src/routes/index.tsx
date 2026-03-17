@@ -7,12 +7,17 @@ export const Route = createFileRoute('/')({
 })
 
 export default function HomePage() {
+  // TO DO TOMORROW
+
+  // 1 IMPLEMENT ALL THE FUNCTIONALITIES (LightBox and Modal)
+  // 2 CREATE A NEW DYNAMIC PAGE FOR THE ALBUNS
+
   return (
     <>
       {/* Background */}
       <div className="fixed inset-0 z-[-1] bg-gradient" />
 
-      <main className="flex flex-col px-6 py-20 overflow-x-hidden">
+      <main className="flex flex-col px-6 max-sm:pt-32 py-20 overflow-x-hidden">
         {/* Hero Section */}
         <section id="inicio">
           <HeroSection />

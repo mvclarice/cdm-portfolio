@@ -50,7 +50,7 @@ export function Modal({
           )}
 
           <button
-            className="z-50 cursor-pointer border border-green-700/40 p-2 rounded-2xl hover:bg-green-400/40"
+            className="z-50 cursor-pointer border border-teal-light p-2 rounded-2xl hover:bg-teal-dark"
             onClick={onClose}
           >
             <X className="cursor-pointer" size={28} color="white" />

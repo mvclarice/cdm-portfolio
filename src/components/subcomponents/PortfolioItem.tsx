@@ -7,6 +7,9 @@ export type PortfolioItemProps = {
   title: string
   description: string
   images: Array<string>
+  onImageClick: (src: string) => void
+  gridStyle?: string
+  aspect?: string
   index: number
 }
 
@@ -16,6 +19,9 @@ export function PortfolioItem({
   title,
   description,
   images,
+  onImageClick,
+  gridStyle,
+  aspect,
   index,
 }: PortfolioItemProps) {
   return (
@@ -55,11 +61,14 @@ export function PortfolioItem({
           </Button>
         </div>
 
-        <div className="w-full grid grid-cols-2 gap-4">
-          {images.map((_, indexImage) => (
-            <div
+        <div className={`w-full grid ${gridStyle} gap-4`}>
+          {images.map((value, indexImage) => (
+            <img
               key={indexImage}
-              className="w-full aspect-video min-h-[7rem] rounded-2xl bg-teal-dark"
+              src={value}
+              onClick={() => onImageClick(value)}
+              className={`w-full ${aspect} object-cover min-h-[7rem] sm:min-h-[8rem] max-h-[15rem] rounded-2xl transition 
+              duration-200 hover:scale-105 cursor-pointer border-2 border-teal-dark`}
             />
           ))}
         </div>

@@ -14,13 +14,13 @@ export default function Header() {
 
         <ul className="nav-links-style text-xs sm:text-[0.8rem] flex gap-4 sm:gap-10">
           <li>
-            <a href="#inicio">Início</a>
+            <a href="/#inicio">Início</a>
           </li>
           <li>
-            <a href="#portfolio">Portfólio</a>
+            <a href="/#portfolio">Portfólio</a>
           </li>
           <li>
-            <a href="#contato">Contato</a>
+            <a href="/#contato">Contato</a>
           </li>
         </ul>
       </nav>
