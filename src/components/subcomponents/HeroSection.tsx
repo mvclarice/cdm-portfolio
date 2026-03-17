@@ -1,3 +1,4 @@
+import { Tag } from '@/global/components'
 import { Button } from '@/ui/components'
 import { LayoutGrid, MessageSquare } from 'lucide-react'
 import { SectionLabel } from '../SectionLabel'
@@ -64,12 +65,15 @@ export function HeroSection() {
             />
 
             {/* Badge */}
-            <div className="float absolute bottom-5 z-10 -right-3 flex items-center gap-2 bg-neutral-900/80 backdrop-blur border border-gray-800 px-4 py-2.5 rounded-xl">
-              <div className="w-2 h-2 bg-teal rounded-full animate-pulse" />
-
-              <span className="text-xs font-semibold tracking-tight text-gray-200">
-                Disponível para projetos
-              </span>
+            <div className="float absolute bottom-5 z-10 -right-3">
+              <Tag
+                variant={'basic2'}
+                size={'lg'}
+                text=" Disponível para projetos"
+                leftIcon={
+                  <div className="w-2 h-2 bg-teal rounded-full animate-pulse" />
+                }
+              />
             </div>
           </div>
         </div>

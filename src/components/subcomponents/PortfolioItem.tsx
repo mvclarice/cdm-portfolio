@@ -1,10 +1,12 @@
+import { Tag } from '@/global/components'
 import { Button } from '@/ui/components'
 import { MoveRight } from 'lucide-react'
 
 export type PortfolioItemProps = {
-  number: number
+  id: number
+  slug: string
   tag: string
-  title: string
+  name: string
   description: string
   images: Array<string>
   onImageClick: (src: string) => void
@@ -14,9 +16,10 @@ export type PortfolioItemProps = {
 }
 
 export function PortfolioItem({
-  number,
+  id,
+  slug,
   tag,
-  title,
+  name,
   description,
   images,
   onImageClick,
@@ -34,31 +37,30 @@ export function PortfolioItem({
         <div className="flex flex-col gap-6">
           <div className="relative">
             <span className="font-serif text-teal text-7xl font-semibold opacity-15 tracking-tighter">
-              {String(number).padStart(2, '0')}
+              {String(id).padStart(2, '0')}
             </span>
 
             {/* Tag */}
-            <div
-              className="absolute bottom-0 uppercase text-teal text-[10px] font-semibold border border-teal px-4 py-1 
-            rounded-full bg-teal/10"
-            >
-              {tag}
+            <div className="absolute bottom-0">
+              <Tag variant={'basic'} size={'default'} text={tag} />
             </div>
           </div>
 
-          <h3 className="text-3xl font-semibold font-serif">{title}</h3>
+          <h3 className="text-3xl font-semibold font-serif">{name}</h3>
 
           <p className="max-w-md lg:w-md text-gray-400 mb-4 leading-relaxed">
             {description}
           </p>
 
-          <Button
-            className="max-w-[15rem] text-teal font-semibold"
-            variant={'ghost'}
-            rightIcon={<MoveRight className="text-teal" />}
-          >
-            Ver projeto completo
-          </Button>
+          <a href={`/project/${slug}`}>
+            <Button
+              className="max-w-[15rem] text-teal font-semibold"
+              variant={'ghost'}
+              rightIcon={<MoveRight className="text-teal" />}
+            >
+              Ver projeto completo
+            </Button>
+          </a>
         </div>
 
         <div className={`w-full grid ${gridStyle} gap-4`}>

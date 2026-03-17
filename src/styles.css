@@ -85,7 +85,7 @@ code {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 251, 59, 0.2) rgb(27, 87, 27);
+  scrollbar-color: var(--color-teal) var(--color-dark);
 }
 
 /* Navbar style */

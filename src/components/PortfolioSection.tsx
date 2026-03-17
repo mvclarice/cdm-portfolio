@@ -22,11 +22,12 @@ export function PortfolioSection() {
       {HOME_PAGE_PORTOFOLIO.map((item, index) => (
         <PortfolioItem
           key={`${item.id}_${index}`}
-          number={item.id}
+          id={item.id}
+          slug={item.slug}
           tag={item.tag}
-          title={item.title}
+          name={item.title}
           description={item.description}
-          images={item.images}
+          images={item.homeImages}
           onImageClick={setSelectedImage}
           gridStyle={item.style}
           aspect={item.aspect}

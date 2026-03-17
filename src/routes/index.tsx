@@ -7,11 +7,6 @@ export const Route = createFileRoute('/')({
 })
 
 export default function HomePage() {
-  // TO DO TOMORROW
-
-  // 1 IMPLEMENT ALL THE FUNCTIONALITIES (LightBox and Modal)
-  // 2 CREATE A NEW DYNAMIC PAGE FOR THE ALBUNS
-
   return (
     <>
       {/* Background */}
