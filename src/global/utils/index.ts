@@ -6,7 +6,7 @@ export const HOME_PAGE_PORTOFOLIO = [
     tag: 'Prefeitura',
     title: 'Casa Pet',
     year: '2024-2026',
-    ferramentas: 'Canva, Potoshop, GPT-5.4',
+    ferramentas: 'Canva, Photoshop, GPT-5.4',
     description:
       'Criação de peças gráficas para o programa Casa Pet da prefeitura, incluindo materiais de divulgação para adoção responsável e cuidados com animais.',
     style: 'grid-cols-2 max-[450px]:grid-cols-2',
@@ -20,6 +20,12 @@ export const HOME_PAGE_PORTOFOLIO = [
       '/casa-pet/9.webp',
     ],
     projectImages: [''],
+    publi: {
+      icon: '/instagram.svg',
+      social: 'Instagram',
+      data: '10 de março de 2025',
+      link: 'https://google.com',
+    },
   },
   {
     id: 2,
@@ -27,7 +33,7 @@ export const HOME_PAGE_PORTOFOLIO = [
     tag: 'Prefeitura',
     title: 'NEPS',
     year: '2024-2026',
-    ferramentas: 'Canva, Potoshop, GPT-5.4',
+    ferramentas: 'Canva, Photoshop, GPT-5.4',
     description:
       'Design de campanhas educativas e material institucional para o Núcleo de Educação e Promoção à Saúde, com foco em comunicação visual acessível e informativa.',
     style: 'grid-cols-2',
@@ -36,6 +42,12 @@ export const HOME_PAGE_PORTOFOLIO = [
     mainBanner: '',
     homeImages: ['/neps/6.webp', '/neps/8.webp'],
     projectImages: [''],
+    publi: {
+      icon: '/facebook.svg',
+      social: 'Facebook',
+      data: '10 de março de 2025',
+      link: 'https://google.com',
+    },
   },
   {
     id: 3,
@@ -43,7 +55,7 @@ export const HOME_PAGE_PORTOFOLIO = [
     tag: 'Prefeitura',
     title: 'SEMMAI',
     year: '2024-2026',
-    ferramentas: 'Canva, Potoshop, GPT-5.4',
+    ferramentas: 'Canva, Photoshop, GPT-5.4',
     description:
       'Desenvolvimento de materiais visuais para a Secretaria Municipal de Meio Ambiente, com sinalização de áreas de preservação, pedais ecológicos e eventos ambientais.',
     style: 'grid-cols-2',
@@ -57,6 +69,12 @@ export const HOME_PAGE_PORTOFOLIO = [
       '/semmai/6.webp',
     ],
     projectImages: [''],
+    publi: {
+      icon: '/instagram.svg',
+      social: 'Instagram',
+      data: '10 de março de 2025',
+      link: 'https://google.com',
+    },
   },
   {
     id: 4,
@@ -64,7 +82,7 @@ export const HOME_PAGE_PORTOFOLIO = [
     tag: 'Prefeitura',
     title: 'SMS',
     year: '2024-2026',
-    ferramentas: 'Canva, Potoshop, GPT-5.4',
+    ferramentas: 'Canva, Photoshop, GPT-5.4',
     description:
       'Peças visuais para a Secretaria Municipal de Saúde, incluindo campanhas de vacinação, eventos sazonais e comunicados oficiais com identidade visual consistente.',
     style: 'grid-cols-2',
@@ -73,6 +91,12 @@ export const HOME_PAGE_PORTOFOLIO = [
     mainBanner: '',
     homeImages: ['/sms/1.webp', '/sms/10.webp'],
     projectImages: [''],
+    publi: {
+      icon: '/facebook.svg',
+      social: 'Facebook',
+      data: '10 de março de 2025',
+      link: 'https://google.com',
+    },
   },
   {
     id: 5,
@@ -80,7 +104,7 @@ export const HOME_PAGE_PORTOFOLIO = [
     tag: 'Faculdade',
     title: 'UNA — Volume I',
     year: '2023-2026',
-    ferramentas: 'Canva, Potoshop, GPT-5.4',
+    ferramentas: 'Canva, Photoshop, GPT-5.4',
     description:
       'Projetos acadêmicos e criativos desenvolvidos para o Centro Universitário UNA, incluindo ilustrações, artes para eventos e materiais promocionais.',
     style: 'grid-cols-2',
@@ -89,6 +113,12 @@ export const HOME_PAGE_PORTOFOLIO = [
     mainBanner: '',
     homeImages: ['/una/9.webp', '/una/18.webp', '/una/23.webp', '/una/12.webp'],
     projectImages: [''],
+    publi: {
+      icon: '/instagram.svg',
+      social: 'Instagram',
+      data: '10 de março de 2025',
+      link: 'https://google.com',
+    },
   },
   {
     id: 6,
@@ -96,7 +126,7 @@ export const HOME_PAGE_PORTOFOLIO = [
     tag: 'Faculdade',
     title: 'UNA — Volume II',
     year: '2023-2026',
-    ferramentas: 'Canva, Potoshop, GPT-5.4',
+    ferramentas: 'Canva, Photoshop, GPT-5.4',
     description:
       'Criação de logotipos e identidade visual para grupos de estudo e projetos acadêmicos, como o GEACEMIV, com guias de cores e aplicações da marca.',
     style: 'grid-cols-2',
@@ -105,6 +135,12 @@ export const HOME_PAGE_PORTOFOLIO = [
     mainBanner: '',
     homeImages: ['/una/26.webp', '/una/24.webp'],
     projectImages: [''],
+    publi: {
+      icon: '/facebook.svg',
+      social: 'Facebook',
+      data: '10 de março de 2025',
+      link: 'https://google.com',
+    },
   },
   {
     id: 7,
@@ -112,7 +148,7 @@ export const HOME_PAGE_PORTOFOLIO = [
     tag: 'Freelance',
     title: 'Outros Trabalhos',
     year: '2022-2026',
-    ferramentas: 'Canva, Potoshop, GPT-5.4',
+    ferramentas: 'Canva, Photoshop, GPT-5.4',
     description:
       'Projetos diversos realizados para clientes e causas pessoais, incluindo artes religiosas, ilustrações temáticas e trabalhos de design independentes.',
     style: 'grid-cols-2',
@@ -126,6 +162,12 @@ export const HOME_PAGE_PORTOFOLIO = [
       '/others/13.webp',
     ],
     projectImages: [''],
+    publi: {
+      icon: '/instagram.svg',
+      social: 'Instagram',
+      data: '10 de março de 2025',
+      link: 'https://google.com',
+    },
   },
 ]
 

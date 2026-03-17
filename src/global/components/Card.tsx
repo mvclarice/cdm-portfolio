@@ -10,10 +10,13 @@ export const cardStyle = cva('w-full flex flex-col h-auto', {
       basic2: '',
       gradient:
         'bg-gradient-to-b from-green-950 to-green-800 border-12 border-green-800',
+      dark: 'bg-gray-900 border border-gray-700/50',
     },
+
     size: {
       lg: 'max-sm:p-8 p-12 rounded-3xl',
       md: 'p-8 rounded-3xl',
+      sm: 'p-4 rounded-xl',
     },
   },
   defaultVariants: {

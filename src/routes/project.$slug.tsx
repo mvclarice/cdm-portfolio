@@ -1,3 +1,4 @@
+import { SocialPostInfo } from '@/components'
 import { Tag } from '@/global/components'
 import { HOME_PAGE_PORTOFOLIO } from '@/global/utils'
 import { createFileRoute } from '@tanstack/react-router'
@@ -39,12 +40,10 @@ export default function Project() {
         <h2 className="text-4xl sm:text-6xl font-semibold font-serif tracking-tight">
           {project?.title}
         </h2>
-
         {/* Project Description */}
         <p className="text-base max-w-2xl leading-relaxed text-gray-400 mb-4">
           {project?.description}
         </p>
-
         {/* Divider */}
         <div className="w-full h-px bg-gray-900" />
         {/* Additional Info */}
@@ -60,12 +59,20 @@ export default function Project() {
         </div>
         {/* Divider */}
         <div className="w-full h-px bg-gray-900 mb-16" />
+        <div className="flex flex-col gap-4">
+          {/* Main Banner */}
+          <img
+            className="rounded-2xl aspect-video object-cover border-2 border-teal"
+            src={project?.mainBanner}
+          />
 
-        {/* Main Banner */}
-        <img
-          className="rounded-2xl aspect-video object-cover border-2 border-teal"
-          src={project?.mainBanner}
-        />
+          <SocialPostInfo
+            icon={project!.publi.icon}
+            social={project!.publi.social}
+            client={project!.client}
+            data={project!.publi.data}
+          />
+        </div>
       </div>
     </div>
   )
