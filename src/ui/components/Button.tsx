@@ -20,9 +20,12 @@ export const buttonStyle = cva(
 
         whats: `bg-gray-900/50 text-white border-2 border-gray-700/40 hover:border-green-700 hover:-translate-y-[2px] 
          font-semibold duration-300 hover:shadow-[0_0_30px_rgba(21,128,61,0.35)]`,
+        disabled:
+          '!text-red-400/50 border border-red-500/15 bg-red-700/10 cursor-alias',
       },
       size: {
         default: 'px-8 py-3 rounded-full text-sm',
+        sm: 'py-1.5 px-4 rounded-full text-xs text-teal font-semibold',
       },
     },
     defaultVariants: {

@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header
       className="w-full py-[1.2rem] px-6 md:px-12 border-b border-gray-900/50 bg-black/70 fixed 
-       flex items-center justify-center z-50 backdrop-blur-sm"
+       flex items-center justify-center z-40 backdrop-blur-sm"
     >
       <nav
         id="navbar"

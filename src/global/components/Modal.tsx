@@ -1,4 +1,5 @@
 import { X } from 'lucide-react'
+import { createPortal } from 'react-dom'
 import { twMerge } from 'tailwind-merge'
 import { Card } from './Card'
 
@@ -19,11 +20,11 @@ export function Modal({
 }: ModalProps) {
   if (!isOpen) return null
 
-  return (
+  return createPortal(
     <>
       {/* Overlay */}
       <div
-        className=" fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+        className=" fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
         onClick={onClose}
       />
 
@@ -50,7 +51,7 @@ export function Modal({
           )}
 
           <button
-            className="z-50 cursor-pointer border border-teal-light p-2 rounded-2xl hover:bg-teal-dark"
+            className="z-[60] cursor-pointer border border-teal-light p-2 rounded-2xl hover:bg-teal-dark"
             onClick={onClose}
           >
             <X className="cursor-pointer" size={28} color="white" />
@@ -61,6 +62,7 @@ export function Modal({
 
         {children}
       </Card>
-    </>
+    </>,
+    document.body,
   )
 }
