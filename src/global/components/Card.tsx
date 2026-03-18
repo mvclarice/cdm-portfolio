@@ -7,7 +7,8 @@ export const cardStyle = cva('w-full flex flex-col h-auto', {
   variants: {
     variant: {
       basic: ' border-2 border-green-900/50 bg-green-950',
-      basic2: '',
+      navigation:
+        'bg-black-transparent/20 hover:bg-green-700/5 hover:border-green-800/50 border border-gray-900 hover:-translate-y-1.5 duration-400 cursor-pointer',
       gradient:
         'bg-gradient-to-b from-green-950 to-green-800 border-12 border-green-800',
       dark: 'bg-gray-900 border border-gray-700/50',
@@ -16,8 +17,9 @@ export const cardStyle = cva('w-full flex flex-col h-auto', {
 
     size: {
       lg: 'max-sm:p-8 p-12 rounded-3xl',
+      base: 'font-serif p-8 rounded-2xl',
       md: 'p-8 rounded-3xl',
-      sm: 'p-4 rounded-2xl',
+      sm: 'p-4 rounded-2xl ',
     },
   },
   defaultVariants: {

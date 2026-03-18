@@ -21,11 +21,18 @@ export function ContactSection() {
           target="_blank"
           href="https://instagram.com/clarice.dm/?igsh=NzJwdXpldnJsbTUx#"
           rel="noopener noreferrer"
+          aria-label="Go to the instagram"
         >
           <Button
             className="min-w-[10rem]"
             variant={'insta'}
-            leftIcon={<img className="size-6" src="/instagram.svg" />}
+            leftIcon={
+              <img
+                alt="instagram-logo"
+                className="size-6"
+                src="/instagram.svg"
+              />
+            }
           >
             Instagram
           </Button>
@@ -34,18 +41,21 @@ export function ContactSection() {
           target="_blank"
           href={`https://wa.me/64999924488?text=${encodeURIComponent(whatsappMessage)}`}
           rel="noopener noreferrer"
+          aria-label="Go to the whatsapp"
         >
           <Button
             className="min-w-[10rem]"
             variant={'whats'}
-            leftIcon={<img className="size-6" src="/whatsapp.svg" />}
+            leftIcon={
+              <img alt="whatsapp-logo" className="size-6" src="/whatsapp.svg" />
+            }
           >
             Whatsapp
           </Button>
         </a>
       </div>
 
-      <p className="text-gray-500 text-xs">
+      <p className="text-gray-400/80 text-xs">
         © 2026 Clarice DM. Todos os direitos reservados.
       </p>
     </div>
