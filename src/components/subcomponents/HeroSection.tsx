@@ -54,7 +54,7 @@ export function HeroSection() {
         </div>
 
         {/* IMAGE */}
-        <div className="flex  justify-center items-center relative">
+        <div className="flex justify-center items-center relative">
           <div className="relative w-[18rem] h-[18rem] md:w-[22rem] md:h-[22rem]">
             <div className="absolute inset-[-4px] animate-spin-slow rounded-full bg-gradient-to-br from-transparent via-transparent to-teal"></div>
 

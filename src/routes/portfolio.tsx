@@ -1,4 +1,3 @@
-import { ProjectLogo } from '@/components'
 import { Card, Modal } from '@/global/components'
 import { LightBox } from '@/global/components/LightBox'
 import type { Album } from '@/global/utils'
@@ -17,8 +16,6 @@ export function Portfolio() {
 
   return (
     <section className="w-full min-h-screen py-24 px-6 sm:px-8 flex flex-col items-center gap-14">
-      <ProjectLogo />
-
       <header color="flex flex-col gap-2">
         <div className="text-center max-w-3xl">
           <h1 className="text-white uppercase text-4xl font-extrabold">
