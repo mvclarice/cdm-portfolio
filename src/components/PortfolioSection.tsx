@@ -28,6 +28,7 @@ export function PortfolioSection() {
           name={item.title}
           description={item.description}
           images={item.homeImages}
+          altImage={`${item.title} - projeto de design para ${item.client}`}
           onImageClick={setSelectedImage}
           gridStyle={item.style}
           aspect={item.aspect}

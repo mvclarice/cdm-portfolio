@@ -62,6 +62,7 @@ export function HeroSection() {
               src="/global/profile.webp"
               alt="Clarice"
               className="relative z-10 w-full h-full rounded-full object-cover border-4 border-neutral-900"
+              fetchPriority="high"
             />
 
             {/* Badge */}
@@ -69,7 +70,7 @@ export function HeroSection() {
               <Tag
                 variant={'basic2'}
                 size={'lg'}
-                text=" Disponível para projetos"
+                text="Disponível para projetos"
                 leftIcon={
                   <div className="w-2 h-2 bg-teal rounded-full animate-pulse" />
                 }

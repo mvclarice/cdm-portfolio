@@ -92,7 +92,7 @@ export default function Project() {
           <div className="flex flex-col gap-4">
             {/* Main Banner */}
             <img
-              alt="main-banner"
+              alt={`${project.title} - banner principal do projeto`}
               src={project.mainBanner}
               className="rounded-xl aspect-[16/9] object-cover border-2 border-teal-dark/70 hover:scale-101 duration-300 cursor-pointer"
               onClick={() => setViewBanner(project.mainBanner)}
@@ -125,7 +125,7 @@ export default function Project() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4  cursor-pointer">
             {verticalImages?.map((img, index) => (
               <img
-                alt="mobile-images"
+                alt={`${project.title} - layout mobile para ${project.client} (${index + 1})`}
                 key={index}
                 src={img.src}
                 onClick={() => setSelectedVerticalImage(img.src)}
@@ -156,7 +156,7 @@ export default function Project() {
                 className={`${img.type === 'full' ? 'col-span-2' : 'col-span-1'} gap-4 cursor-pointer`}
               >
                 <img
-                  alt="desktop-images"
+                  alt={`${project.title} - layout desktop para ${project.client} (${index + 1})`}
                   src={img.src}
                   onClick={() => setSelectedHorizontalImage(img.src)}
                   className={`w-full ${img.type === 'horizontal' ? 'aspect-[16/9]' : ''} object-cover border border-teal rounded-xl 

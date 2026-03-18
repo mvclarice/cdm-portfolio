@@ -10,6 +10,7 @@ export type PortfolioItemProps = {
   name: string
   description: string
   images: Array<string>
+  altImage: string
   onImageClick: (src: string) => void
   gridStyle?: string
   aspect?: string
@@ -23,6 +24,7 @@ export function PortfolioItem({
   name,
   description,
   images,
+  altImage,
   onImageClick,
   gridStyle,
   aspect,
@@ -68,6 +70,7 @@ export function PortfolioItem({
           {images.map((value, indexImage) => (
             <img
               key={indexImage}
+              alt={altImage}
               src={value}
               onClick={() => onImageClick(value)}
               className={`w-full ${aspect} object-cover min-h-[7rem] sm:min-h-[8rem] max-h-[15rem] rounded-2xl transition 
