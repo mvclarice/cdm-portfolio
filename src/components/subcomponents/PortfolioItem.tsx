@@ -1,5 +1,6 @@
 import { Tag } from '@/global/components'
 import { Button } from '@/ui/components'
+import { Link } from '@tanstack/react-router'
 import { MoveRight } from 'lucide-react'
 
 export type PortfolioItemProps = {
@@ -52,7 +53,7 @@ export function PortfolioItem({
             {description}
           </p>
 
-          <a href={`/project/${slug}`}>
+          <Link to={'/project/$slug'} params={{ slug }}>
             <Button
               className="max-w-[15rem] text-teal font-semibold"
               variant={'ghost'}
@@ -60,7 +61,7 @@ export function PortfolioItem({
             >
               Ver projeto completo
             </Button>
-          </a>
+          </Link>
         </div>
 
         <div className={`w-full grid ${gridStyle} gap-4`}>

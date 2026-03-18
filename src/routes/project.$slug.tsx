@@ -1,7 +1,7 @@
 import { ProjectsSectionHeader, SocialPostInfo } from '@/components'
 import { Card, LightBox, Tag } from '@/global/components'
 import { HOME_PAGE_PORTOFOLIO } from '@/global/utils'
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
 export const Route = createFileRoute('/project/$slug')({
@@ -180,9 +180,10 @@ export default function Project() {
         {/* Links */}
         <div className="flex w-full max-sm:flex-col gap-4 max-sm:items-center sm:justify-between">
           {prevProject ? (
-            <a
+            <Link
               className="w-full sm:w-1/2"
-              href={`/project/${prevProject.slug}`}
+              to={'/project/$slug'}
+              params={{ slug: prevProject.slug }}
             >
               <Card
                 variant="navigation"
@@ -196,7 +197,7 @@ export default function Project() {
                   {prevProject.title}
                 </span>
               </Card>
-            </a>
+            </Link>
           ) : (
             <div className="w-full sm:w-1/2">
               <Card
@@ -215,9 +216,10 @@ export default function Project() {
           )}
 
           {nextProject ? (
-            <a
+            <Link
               className="w-full sm:w-1/2"
-              href={`/project/${nextProject.slug}`}
+              to={'/project/$slug'}
+              params={{ slug: nextProject.slug }}
             >
               <Card
                 variant="navigation"
@@ -231,7 +233,7 @@ export default function Project() {
                   {nextProject.title}
                 </span>
               </Card>
-            </a>
+            </Link>
           ) : (
             <div className="w-full sm:w-1/2">
               <Card
