@@ -227,7 +227,7 @@ export default function Project() {
                 className="max-sm:items-center"
               >
                 <span className="text-sm uppercase font-serif text-gray-400/90">
-                  ← Anterior
+                  Próximo →
                 </span>
                 <span className="text-xl sm:text-2xl font-semibold">
                   {nextProject.title}
