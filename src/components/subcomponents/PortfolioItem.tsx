@@ -57,7 +57,7 @@ export function PortfolioItem({
 
           <Link to={'/project/$slug'} params={{ slug }}>
             <Button
-              className="max-w-[15rem] text-teal font-semibold"
+              className="max-w-[16rem] text-teal font-semibold"
               variant={'ghost'}
               rightIcon={<MoveRight className="text-teal" />}
             >
