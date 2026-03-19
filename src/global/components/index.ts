@@ -1,5 +1,3 @@
-export * from './Card'
 export * from './Header'
 export * from './LightBox'
-export * from './Modal'
-export * from './Tag'
+export * from './NavigationCard'

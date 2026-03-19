@@ -1,50 +1,52 @@
 import { ProjectsSectionHeader, SocialPostInfo } from '@/components'
-import { Card, LightBox, Tag } from '@/global/components'
+import { ProjectAdditionalInfo } from '@/components/subcomponents/ProjectAdditionalInfo'
+import { LightBox, NavigationCard } from '@/global/components'
 import { HOME_PAGE_PORTOFOLIO } from '@/global/utils'
-import { Link, createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
+import { Tag } from '@/ui/components'
+import { createFileRoute } from '@tanstack/react-router'
+import { useLayoutEffect, useState } from 'react'
 
 export const Route = createFileRoute('/project/$slug')({
   component: Project,
 })
 
 export default function Project() {
-  const [viewBanner, setViewBanner] = useState<string | undefined>(undefined)
-  const [selectedVerticalImage, setSelectedVerticalImage] = useState<
-    string | undefined
-  >(undefined)
-  const [selectedHorizontalImage, setSelectedHorizontalImage] = useState<
-    string | undefined
-  >(undefined)
+  const [lightboxImage, setLightboxImage] = useState<string | undefined>(
+    undefined,
+  )
 
   const { slug } = Route.useParams()
   const portfolio = HOME_PAGE_PORTOFOLIO
 
-  const project = portfolio.find((item) => item.slug === slug)
-
   const currentIndex = portfolio.findIndex((item) => item.slug === slug)
+  const project = portfolio[currentIndex]
+
   const prevProject = currentIndex > 0 ? portfolio[currentIndex - 1] : null
   const nextProject =
     currentIndex < portfolio.length - 1 ? portfolio[currentIndex + 1] : null
 
-  const projectAdditionalInfo = [
-    { label: 'Cliente', value: project?.client },
-    { label: 'Categoria', value: project?.tag },
-    { label: 'Ano', value: project?.year },
-    { label: 'Ferramentas', value: project?.ferramentas },
-  ]
-
-  const verticalImages = project?.projectImages.filter(
+  // Filter images by mobile and desktop.
+  const verticalImages = project.projectImages.filter(
     (i) => i.type === 'vertical',
   )
-  const horizontalImages = project?.projectImages.filter(
+  const horizontalImages = project.projectImages.filter(
     (i) => i.type.includes('horizontal') || i.type.includes('full'),
   )
 
-  if (!project) return <div>Projeto não encontrado</div>
+  // Scroll to top of the page when reloading or navigating between routes
+  useLayoutEffect(() => {
+    const container = document.getElementById('root')
+
+    if (container) {
+      container.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [slug])
 
   return (
-    <div className="bg-gradient flex flex-col h-screen items-center w-full px-6 pt-32 pb-10 overflow-x-hidden">
+    <div
+      id="root"
+      className="bg-gradient flex flex-col min-h-screen items-center w-full px-6 pt-32 pb-10 overflow-x-hidden"
+    >
       <div className="flex flex-col w-full max-w-3xl gap-8">
         {/* Return to homepage */}
         <div className="flex w-full gap-2 items-center">
@@ -74,28 +76,24 @@ export default function Project() {
         <div className="w-full h-px bg-gray-800/60" />
 
         {/* Additional Info */}
-        <div className="grid grid-cols-2 sm:flex items-center justify-between gap-4">
-          {projectAdditionalInfo.map((p, index) => (
-            <div key={index} className="flex flex-col">
-              <span className="uppercase text-[11px] text-gray-500 tracking-widest">
-                {p.label}
-              </span>
-              <div className="tracking-tight text-[15px]">{p.value}</div>
-            </div>
-          ))}
-        </div>
+        <ProjectAdditionalInfo
+          client={project.client}
+          category={project.tag}
+          period={project.year}
+          tools={project.ferramentas}
+        />
 
         {/* Divider */}
         <div className="w-full h-px bg-gray-800/80 mb-16" />
 
-        <section color="flex flex-col w-full h-full gap-10">
+        <div className="flex flex-col w-full h-full gap-16">
           <div className="flex flex-col gap-4">
             {/* Main Banner */}
             <img
               alt={`${project.title} - banner principal do projeto`}
               src={project.mainBanner}
               className="rounded-xl aspect-[16/9] object-cover border-2 border-teal-dark/70 hover:scale-101 duration-300 cursor-pointer"
-              onClick={() => setViewBanner(project.mainBanner)}
+              onClick={() => setLightboxImage(project.mainBanner)}
             />
 
             <SocialPostInfo
@@ -105,160 +103,85 @@ export default function Project() {
               data={project.publi.data}
               socialLink={project.publi.link}
             />
+          </div>
 
-            {/* View Main Banner */}
-            <LightBox
-              src={viewBanner}
-              onClose={() => setViewBanner(undefined)}
+          {/* Divider */}
+          <div className="w-full h-px bg-gray-800/80" />
+
+          {/* Vertical Images Section*/}
+          <section className="flex flex-col gap-10">
+            <ProjectsSectionHeader
+              title=" Imagens Mobile"
+              number={verticalImages.length || 0}
             />
-          </div>
 
-          {/* Divider */}
-          <div className="w-full h-px my-16 bg-gray-800/80" />
-
-          {/* Vertical Images */}
-          <ProjectsSectionHeader
-            title=" Imagens Mobile"
-            number={verticalImages?.length || 0}
-          />
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4  cursor-pointer">
-            {verticalImages?.map((img, index) => (
-              <img
-                alt={`${project.title} - layout mobile para ${project.client} (${index + 1})`}
-                key={index}
-                src={img.src}
-                onClick={() => setSelectedVerticalImage(img.src)}
-                className="w-full aspect-[9/16] object-cover border border-teal rounded-xl duration-300 hover:scale-[1.02]"
-              />
-            ))}
-          </div>
-
-          {/* View Vertical Image */}
-          <LightBox
-            src={selectedVerticalImage}
-            onClose={() => setSelectedVerticalImage(undefined)}
-          />
-
-          {/* Divider */}
-          <div className="w-full h-px my-16 bg-gray-800/80" />
-
-          {/* Horizontal Images */}
-          <ProjectsSectionHeader
-            title=" Imagens Desktop"
-            number={horizontalImages?.length || 0}
-          />
-
-          <div className="grid grid-cols-2 gap-4">
-            {horizontalImages?.map((img, index) => (
-              <div
-                key={index}
-                className={`${img.type === 'full' ? 'col-span-2' : 'col-span-1'} gap-4 cursor-pointer`}
-              >
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 cursor-pointer">
+              {verticalImages.map((img, index) => (
                 <img
-                  alt={`${project.title} - layout desktop para ${project.client} (${index + 1})`}
+                  alt={`${project.title} - layout mobile para ${project.client} (${index + 1})`}
+                  key={index}
                   src={img.src}
-                  onClick={() => setSelectedHorizontalImage(img.src)}
-                  className={`w-full ${img.type === 'horizontal' ? 'aspect-[16/9]' : ''} object-cover border border-teal rounded-xl 
+                  onClick={() => setLightboxImage(img.src)}
+                  className="w-full aspect-[9/16] object-cover border border-teal rounded-xl duration-300 hover:scale-[1.02]"
+                />
+              ))}
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-gray-800/80" />
+
+          {/* Horizontal Images Section*/}
+          <section className="flex flex-col gap-10">
+            <ProjectsSectionHeader
+              title=" Imagens Desktop"
+              number={horizontalImages.length || 0}
+            />
+
+            <div className="grid grid-cols-2 gap-4">
+              {horizontalImages.map((img, index) => (
+                <div
+                  key={index}
+                  className={`${img.type === 'full' ? 'col-span-2' : 'col-span-1'} gap-4 cursor-pointer`}
+                >
+                  <img
+                    alt={`${project.title} - layout desktop para ${project.client} (${index + 1})`}
+                    src={img.src}
+                    onClick={() => setLightboxImage(img.src)}
+                    className={`w-full ${img.type === 'horizontal' ? 'aspect-[16/9]' : ''} object-cover border border-teal rounded-xl 
                   duration-300 hover:scale-[1.02]
              `}
-                />
-              </div>
-            ))}
-
-            {/* View Horizontal Image */}
-            <LightBox
-              src={selectedHorizontalImage}
-              onClose={() => setSelectedHorizontalImage(undefined)}
-            />
-          </div>
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* Divider */}
-          <div className="w-full h-px mt-16 mb-6 bg-gray-800/80" />
-        </section>
+          <div className="w-full h-px bg-gray-800/80" />
 
-        {/* Links */}
-        <div className="flex w-full max-sm:flex-col gap-4 max-sm:items-center sm:justify-between">
-          {prevProject ? (
-            <Link
-              className="w-full sm:w-1/2"
-              to={'/project/$slug'}
-              params={{ slug: prevProject.slug }}
-            >
-              <Card
-                variant="navigation"
-                size="base"
-                className="max-sm:items-center"
-              >
-                <span className="text-sm uppercase font-serif text-gray-400/90">
-                  ← Anterior
-                </span>
-                <span className="text-xl sm:text-2xl font-semibold">
-                  {prevProject.title}
-                </span>
-              </Card>
-            </Link>
-          ) : (
-            <div className="w-full sm:w-1/2">
-              <Card
-                variant="navigation"
-                size="base"
-                className="max-sm:items-center opacity-50 pointer-events-none"
-              >
-                <span className="text-sm uppercase font-serif text-gray-400/90">
-                  ← Anterior
-                </span>
-                <span className="text-xl sm:text-2xl font-semibold">
-                  Nenhum
-                </span>
-              </Card>
-            </div>
-          )}
+          {/* Navigation Cards */}
+          <div className="flex w-full max-sm:flex-col gap-4 max-sm:items-center sm:justify-between">
+            <NavigationCard project={prevProject} direction="prev" />
+            <NavigationCard project={nextProject} direction="next" />
+          </div>
 
-          {nextProject ? (
-            <Link
-              className="w-full sm:w-1/2"
-              to={'/project/$slug'}
-              params={{ slug: nextProject.slug }}
-            >
-              <Card
-                variant="navigation"
-                size="base"
-                className="max-sm:items-center"
-              >
-                <span className="text-sm uppercase font-serif text-gray-400/90">
-                  Próximo →
-                </span>
-                <span className="text-xl sm:text-2xl font-semibold">
-                  {nextProject.title}
-                </span>
-              </Card>
-            </Link>
-          ) : (
-            <div className="w-full sm:w-1/2">
-              <Card
-                variant="navigation"
-                size="base"
-                className="max-sm:items-center opacity-50 pointer-events-none"
-              >
-                <span className="text-sm uppercase font-serif text-gray-400/90">
-                  Próximo →
-                </span>
-                <span className="text-xl sm:text-2xl font-semibold">
-                  Nenhum
-                </span>
-              </Card>
-            </div>
-          )}
+          {/* Rights */}
+          <div className="flex flex-col gap-4">
+            <div className="w-full h-px bg-gray-800/60" />
+
+            <p className="text-gray-400/80 text-xs text-center">
+              © 2026 Clarice DM. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
-
-        {/* Divider */}
-        <div className="w-full h-px my-6 bg-gray-800/80" />
-
-        <p className="text-gray-400/80 text-xs text-center">
-          © 2026 Clarice DM. Todos os direitos reservados.
-        </p>
       </div>
+
+      {/* View Selected Image */}
+      <LightBox
+        src={lightboxImage}
+        onClose={() => setLightboxImage(undefined)}
+      />
     </div>
   )
 }

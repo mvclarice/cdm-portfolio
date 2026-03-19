@@ -1,5 +1,4 @@
-import { Tag } from '@/global/components'
-import { Button } from '@/ui/components'
+import { Button, Tag } from '@/ui/components'
 import { Link } from '@tanstack/react-router'
 import { MoveRight } from 'lucide-react'
 

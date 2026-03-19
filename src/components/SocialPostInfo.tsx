@@ -1,5 +1,4 @@
-import { Card } from '@/global/components'
-import { Button } from '@/ui/components'
+import { Button, Card } from '@/ui/components'
 import { CircleX, SquareArrowOutUpRight } from 'lucide-react'
 
 export type SocialPostInfoProps = {

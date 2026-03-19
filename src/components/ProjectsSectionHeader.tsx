@@ -8,7 +8,7 @@ export function ProjectsSectionHeader({
   number,
 }: ProjectsSectionHeaderProps) {
   return (
-    <div className="flex items-center max-sm:flex-col justify-between gap-4 mb-10">
+    <div className="flex items-center max-sm:flex-col justify-between gap-4">
       <h3 className="text-3xl sm:text-4xl font-semibold font-serif tracking-tight">
         {title}
       </h3>

@@ -1,5 +1,5 @@
+import { Modal } from '@/ui/components'
 import { useEffect } from 'react'
-import { Modal } from './Modal'
 
 export type LightBoxProps = {
   src: string | undefined
@@ -7,7 +7,7 @@ export type LightBoxProps = {
 }
 
 export function LightBox({ src, onClose }: LightBoxProps) {
-  // Close the modal when the user presses ESC on the keyboard.
+  // Close the modal when the user presses ESC on keyboard.
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()

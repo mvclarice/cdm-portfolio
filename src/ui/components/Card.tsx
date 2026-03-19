@@ -8,7 +8,7 @@ export const cardStyle = cva('w-full flex flex-col h-auto', {
     variant: {
       basic: ' border-2 border-green-900/50 bg-green-950',
       navigation:
-        'bg-black-transparent/20 hover:bg-green-700/5 hover:border-green-800/50 border border-gray-900 hover:-translate-y-1.5 duration-400 cursor-pointer',
+        'bg-gray-900/50 hover:bg-green-700/10 hover:border-green-800/50 border border-gray-700/50 hover:-translate-y-1.5 duration-400 cursor-pointer',
       gradient:
         'bg-gradient-to-b from-green-950 to-green-800 border-12 border-green-800',
       dark: 'bg-gray-900 border border-gray-700/50',
