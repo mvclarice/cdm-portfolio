@@ -39,15 +39,18 @@ Projects include:
 ## 📸 Preview do Projeto / Project Preview
 
 <p align="center">
-  <img src="./public/readme/1.webp" width="45%" />
-  <img src="./public/readme/2.webp" width="45%" />
-  <img src="./public/readme/3.webp" width="45%" />
+  <img src="./public/readme/1.webp" width="49%" height="250px" style="object-fit: cover; border-radius: 16px;" />
+  <img src="./public/readme/2.webp" width="49%" height="250px" style="object-fit: cover; border-radius: 16px;" />
 </p>
 
 <p align="center">
-  <img src="./public/readme/4.webp" width="45%" />
-  <img src="./public/readme/5.webp" width="45%" />
-  <img src="./public/readme/6.webp" width="45%" />
+  <img src="./public/readme/3.webp" width="49%" height="250px" style="object-fit: cover; border-radius: 16px;" />
+  <img src="./public/readme/4.webp" width="49%" height="250px" style="object-fit: cover; border-radius: 16px;" />
+</p>
+
+<p align="center">
+  <img src="./public/readme/5.webp" width="49%" height="250px" style="object-fit: cover; border-radius: 16px;" />
+  <img src="./public/readme/6.webp" width="49%" height="250px" style="object-fit: cover; border-radius: 16px;" />
 </p>
 
 ---
