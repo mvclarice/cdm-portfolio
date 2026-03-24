@@ -87,7 +87,7 @@ export const HOME_PAGE_PORTOFOLIO: Array<Project> = [
       { src: '/neps/7.webp', type: 'vertical' },
       { src: '/neps/5.webp', type: 'vertical' },
       { src: '/neps/4.webp', type: 'full' },
-      { src: '/neps/2.webp', type: 'horizontal' },
+      { src: '/neps/2.webp', type: 'vertical' },
       { src: '/neps/1.webp', type: 'horizontal' },
     ],
     publi: {
@@ -270,7 +270,7 @@ export const HOME_PAGE_PORTOFOLIO: Array<Project> = [
       { src: '/others/12.webp', type: 'vertical' },
       { src: '/others/6.webp', type: 'vertical' },
       { src: '/others/9.webp', type: 'vertical' },
-      { src: '/others/10.webp', type: 'vertical' },
+      { src: '/others/10.webp', type: 'horizontal' },
       { src: '/others/5.webp', type: 'vertical' },
     ],
     publi: {
